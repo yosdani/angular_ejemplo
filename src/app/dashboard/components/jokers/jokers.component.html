@@ -1,0 +1,41 @@
+<nav class="nav-tools" id="nav-tools">
+  <button mat-button (click) = "AddJoker()" >Add</button>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+<!--     <button mat-button (click) = "HideMenu()" >Hide</button>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" id="icon-tools" class="icon" (click) = "ShowMenu()">home</mat-icon> -->
+</nav>
+
+<div class="container">
+ <section class="grid">
+    <article class="card-standar"  *ngFor = "let joker of listJokers">
+
+
+          <figure class="card-img">
+            <img [src]="joker.icon_url" alt="Photo of a Shiba Inu">
+          </figure>
+            <span>Categories: {{joker.categories}}</span>
+            <p>
+              {{joker.value}}
+            </p>
+            <a [href]="joker.url"></a>
+            <ul class="menu-edit">
+                <li class="item"
+                (click) = "openModalEdit(joker)"
+                >
+                    Edit
+                </li>
+                <li class="item"
+                  (click) = "OnDelete(joker.id)"
+                >
+                    Delete
+                </li>
+            </ul>                 
+    </article>
+</section> 
+</div>
+
+

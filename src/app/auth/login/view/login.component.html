@@ -1,0 +1,23 @@
+<section class="content-page">
+    <mat-card>
+        
+        <div class="content-login">
+            <h1>Login</h1>
+            <mat-form-field hintLabel="Max 10 characters" appearance="fill" >
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email" required  >
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+
+            </mat-form-field>
+            <button mat-button class="buttom-login" (click)="OnLogin()">Login</button>
+        </div>
+
+    </mat-card>
+</section>

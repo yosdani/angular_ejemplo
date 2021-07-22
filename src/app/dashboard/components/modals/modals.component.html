@@ -1,0 +1,29 @@
+<main class="modal-content">
+    <h2>Edit joker with id: {{data.id}}</h2>
+    <img [src]="data.icon_url" [alt]="data.categories">
+      <mat-form-field appearance="legacy" >
+        <mat-label>Categories</mat-label>
+        <input matInput placeholder="categories: data.categories" [value]="data.categories" [formControl]="cat" >
+        <mat-hint></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select Categories</mat-label>
+        <mat-select *ngFor="let cat of categories">
+          <mat-option value="option">{{cat.cat_name}}</mat-option>
+        </mat-select>
+
+      </mat-form-field>
+  <!--     <mat-form-field appearance="legacy" >
+        <mat-label>Url</mat-label>
+        <input matInput placeholder="url: eg. https://www.ej.com" [value]="data.url" [formControl]="url" >
+        <mat-hint></mat-hint>
+      </mat-form-field> -->
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." [formControl]="desc" >{{data.value}}</textarea>
+       </mat-form-field>
+
+      <button mat-stroked-button (click) = "OnSave()">Save</button>
+</main>

@@ -1,0 +1,25 @@
+<main class="content">
+    <aside class="content-aside">
+        <div class="info-user">
+            <img [src]="profile.data.avatar" alt="imagen user">
+            <article class="article-user">
+                <span>{{  profile.data.email }}</span>
+                <span>{{ profile.data.first_name}} {{ profile.data.last_name}}</span>
+                <span>{{ profile.support.text}}</span>
+                <span>{{ profile.support.url}}</span>
+            </article>
+        </div>
+        <ul class="menu-aside">
+<!--             <li class="item-menu"><a>Home</a></li>
+            <li class="item-menu"><a>Setting</a></li> -->
+            <li class="item-menu" [routerLink]="['/dashboard/joker']" routerLinkActive="router-link-active" ><a>Jokers</a></li>
+<!--             <li class="item-menu"><a>Category</a> </li> -->
+            <li class="item-menu" (click)="OnLogout()"><a>Logout</a></li>
+        </ul>
+    </aside>
+    <section class="sub-content">
+            <router-outlet></router-outlet>
+    </section>
+
+</main>
+
